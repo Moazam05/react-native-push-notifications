@@ -3,11 +3,13 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
+    "android": "clear && react-native run-android",
+    "ios": "clear && react-native run-ios --simulator='iPhone SE (3rd generation)'",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "android-clean": "clear && cd android && ./gradlew clean && cd .. && npm run android",
+    "ios-clean": "clear && cd ios && rm -rf build && xcodebuild clean && pod update && cd .. && npm run ios"
   },
   "dependencies": {
     "react": "18.3.1",
